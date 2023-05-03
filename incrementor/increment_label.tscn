@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs3hhgqxuc7a8"]
+
+[ext_resource type="Script" path="res://incrementor/increment.gd" id="1_b1j45"]
+
+[node name="Label" type="Label"]
+offset_left = 240.0
+offset_top = 32.0
+offset_right = 286.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 24
+text = "1"
+uppercase = true
+script = ExtResource("1_b1j45")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

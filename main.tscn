@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5158mstpehjy"]
+
+[ext_resource type="PackedScene" uid="uid://bs3hhgqxuc7a8" path="res://incrementor/increment_label.tscn" id="1_3w8lr"]
+[ext_resource type="Script" path="res://somethingBeautiful/ButtonChangeTextThing.gd" id="2_skksw"]
+
+[sub_resource type="Theme" id="Theme_uesxj"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Label" parent="." instance=ExtResource("1_3w8lr")]
+
+[node name="Label2" parent="." instance=ExtResource("1_3w8lr")]
+offset_left = 238.0
+offset_top = 69.0
+offset_right = 284.0
+offset_bottom = 117.0
+
+[node name="MenuButton" type="MenuButton" parent="."]
+offset_left = -240.0
+offset_top = -293.0
+offset_right = -60.0
+offset_bottom = -101.0
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 69.0
+offset_top = -159.0
+offset_right = 83.0
+offset_bottom = -139.0
+
+[node name="ButtonChangeTextThing" type="Node2D" parent="."]
+script = ExtResource("2_skksw")
+
+[node name="LineEdit" type="LineEdit" parent="ButtonChangeTextThing"]
+offset_left = 344.0
+offset_top = 36.0
+offset_right = 411.062
+offset_bottom = 67.0
+theme = SubResource("Theme_uesxj")
+placeholder_text = "#"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ButtonChangeTextThing"]
+offset_left = 296.0
+offset_top = 138.0
+offset_right = 483.0
+offset_bottom = 272.0
+
+[node name="Label3" type="Label" parent="ButtonChangeTextThing"]
+offset_left = 481.0
+offset_top = 37.0
+offset_right = 521.0
+offset_bottom = 63.0
+text = "#"
+
+[connection signal="text_submitted" from="ButtonChangeTextThing/LineEdit" to="ButtonChangeTextThing" method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="ButtonChangeTextThing/Button" to="ButtonChangeTextThing" method="_on_button_pressed"]
