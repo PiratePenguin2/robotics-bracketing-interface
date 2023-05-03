@@ -16,7 +16,7 @@ func _ready():
 func _on_button_pressed():     #Press button
 	change()
 
-func _on_line_edit_text_submitted(new_text):
+func _on_line_edit_text_submitted(_new_text):
 	change()
 
 func change():
